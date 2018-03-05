@@ -74,30 +74,34 @@ exports.testCmd= (rl,id) =>{
 };
 exports.playCmd=rl=>{
     let score=0;
-    let tobeResolve=[];
-    for(let j=0;j<Math.max(model.getAll.id);j++){
-        let a=sort(model.getAll.id);
-        tobeResolve[j]=a[j];
+    toBeResolve=[];
+    quizzes=model.getAll();
+    for(let i=0;i<quizzes.length;i++){
+        toBeResolve.push(i);
     }
 
     const playOne=()=>{
 
 
-    if(tobeResolve.length===0){
+    if(toBeResolve.length===0){
         log("No hay nada más que preguntar.\nFin del examen. Aciertos:");
         rl.prompt();
     }else{
-        let a=Math.random();
-        let quiz=model.getByIndex(a);
+        let id=Math.floor(Math.random());
+        let quiz=quizzes[id];
         rl.question(colorize(quiz.question+'?','red'),answer => {
 
             if((answer.trim()).toLowerCase()===quiz.answer.toLowerCase()){
-            log("CORRECTO - Lleva ",$[++score], "aciertos.");
+                score++;
+            log(`CORRECTO - Lleva ${score} aciertos.`);
+            toBeResolve.splice(id, 1);
+            quizzes.splice(id, 1);
             playOne();
 
+
         }else{
-            log("Incorrecto.\nFin del juego. Aciertos: ",$[score]);
-            biglog(`[${colorize(score,'magenta')}]`);
+            log(`Incorrecto.\nFin del juego. Aciertos: ${score}`);
+            biglog(score,"magenta");
             rl.prompt();
         }
 
