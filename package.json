@@ -1,6 +1,6 @@
 {
   "name": "quiz",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Proyecto Quiz",
   "main": "main.js",
   "scripts": {
@@ -17,7 +17,16 @@
   "dependencies": {
     "chalk": "^2.3.2",
     "figlet": "^1.2.0",
-    "sequelize": "^4.35.2",
+    "sequelize": "^3.30.2",
     "sqlite3": "^3.1.13"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lingfengzheng/P4_Quiz.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lingfengzheng/P4_Quiz/issues"
+  },
+  "homepage": "https://github.com/lingfengzheng/P4_Quiz#readme"
 }
