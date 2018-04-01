@@ -262,7 +262,7 @@ exports.playCmd = (socket,rl) => {
         return Promise.resolve()
             .then (() => {
                 if (toBePlayed.length <= 0) {
-                    console.log(socket,"Fin del Juego");
+                    log(socket,"Fin del Juego");
                     return;
                 }
                 let pos = Math.floor(Math.random() * toBePlayed.length);
