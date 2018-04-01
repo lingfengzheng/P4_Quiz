@@ -277,6 +277,7 @@ exports.playCmd = (socket,rl) => {
                             return playOne();
                         } else {
                             log(socket,"Respuesta incorrecta");
+                            log(socket,"Fin del juego");
                         }
                     })
             })
