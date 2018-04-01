@@ -276,7 +276,7 @@ exports.playCmd = (socket,rl) => {
                             log(socket,`CORRECTO - Lleva ${score} aciertos.`,'green');
                             return playOne();
                         } else {
-                            console.log(socket,"Respuesta incorrecta");
+                            log(socket,"Respuesta incorrecta");
                         }
                     })
             })
@@ -290,7 +290,7 @@ exports.playCmd = (socket,rl) => {
             return playOne();
         })
         .catch(e => {
-            console.log(socket,"error: " + e);
+            log(socket,"error: " + e);
         })
         .then(() => {
             biglog(socket,score);
